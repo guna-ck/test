@@ -8,11 +8,7 @@ node {
       }
       
       
-      stage('Test image') {
-      app.inside {
-            sh 'curl http://localhost:80 || exit 1'
-            }
-          }
+      
           
        stage('Push image') {
        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
