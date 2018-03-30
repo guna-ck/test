@@ -1,5 +1,5 @@
-FROM centos:7
-RUN yum update -y && \
-    yum install -y httpd
-RUN systemctl start httpd
+FROM ubuntu:14.04
+RUN apt-get update -y && \
+    apt-get install -y httpd
+RUN service httpd start 
 EXPOSE 80
