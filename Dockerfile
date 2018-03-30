@@ -1,7 +1,10 @@
-FROM ubuntu:14.04
-RUN apt-get update -y && \
-    apt-get install -y apache2 \
-    curl
+FROM centos:7
+RUN yum update -y && yum cleanall \
+    yum install -y httpd \
+        curl
+
+RUN curl http://localhost:80
 
 EXPOSE 80
-CMD ["apache2", "start"]
+
+CMD ["httpd" "start"]
