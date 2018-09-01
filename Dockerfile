@@ -1,6 +1,6 @@
-FROM centos:7
-RUN yum update -y && yum clean all
-RUN yum install -y httpd \
+FROM ubuntu:l6.04
+RUN apt-get update -y 
+RUN apt-get install -y httpd \
         curl
 EXPOSE 80
 
