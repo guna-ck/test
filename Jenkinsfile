@@ -11,8 +11,8 @@ node {
       
           
        stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
+             docker.withRegistry('https://hub.docker.com', 'dockerHubAccount'){
+             docker.image('latest')
         }
     }
 }
