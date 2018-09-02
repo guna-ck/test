@@ -4,7 +4,7 @@ node {
       checkout scm
       }
       stage('build') {
-      app = docker.build("guna-ck")
+      app = docker.build("ubuntu")
       }
       
       
