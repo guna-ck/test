@@ -11,8 +11,9 @@ node {
       
           
        stage('Push to Docker Registry'){
-             docker.withRegistry('https://docker.io', 'DockerHubCredentials'){
-             app.push('latest')
+             withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push gunack23/ubuntu:latest'
                    
            }
     }
