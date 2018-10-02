@@ -4,7 +4,7 @@ node {
       checkout scm
       }
       stage('build') {
-      app = docker.build("ubuntu")
+      app = docker.build("gunack23/ubuntu")
       }
       
       
