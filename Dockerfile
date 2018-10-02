@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update -y 
-RUN apt-get install -y apache2 curl
+RUN apt-get install -y apache2 
 
 EXPOSE 800
 
